@@ -1,8 +1,10 @@
 package pages.user;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.base.BasePage;
 
 public class LoginPage extends BasePage {
@@ -19,9 +21,9 @@ public class LoginPage extends BasePage {
     @FindBy(css = ".btn")
     private WebElement loginBtn;
 
-    public LoginPage fillLoginAndClick(String login, String password){
-        sendKeys(loginInput, login);
-        sendKeys(passwordInput, password);
+    public LoginPage fillLoginAndClick(String login, String password) {
+        loginInput.sendKeys(login);
+        loginInput.sendKeys(password);
         click(loginBtn);
         return this;
     }

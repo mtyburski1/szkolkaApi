@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base.BasePage;
+import pages.events.EventsPage;
 import pages.user.RegisterPage;
 
 public class MainMenuPage extends BasePage {
@@ -17,7 +18,7 @@ public class MainMenuPage extends BasePage {
     @FindBy(xpath = "/html/body/div[1]/ul/li[2]")
     private WebElement eventsBtn;
 
-    @FindBy(xpath = ".glyphicon")
+    @FindBy(css = ".glyphicon")
     private WebElement cartBtn;
 
     @FindBy(xpath = "/html/body/div[1]/ul/li[4]")
@@ -31,13 +32,13 @@ public class MainMenuPage extends BasePage {
         return this;
     }
 
-    public MainMenuPage goToEventsClick(){
+    public EventsPage goToEventsClick(){
         click(eventsBtn);
-        return this;
+        return new EventsPage(driver);
     }
 
     public MainMenuPage goToCartClick(){
-        click(cartBtn);
+        cartBtn.click();
         return this;
     }
 

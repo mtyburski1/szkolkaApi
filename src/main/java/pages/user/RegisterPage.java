@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base.BasePage;
+import pages.main.MainMenuPage;
 
 public class RegisterPage extends BasePage {
     public RegisterPage(WebDriver driver) {
@@ -32,7 +33,7 @@ public class RegisterPage extends BasePage {
     @FindBy(css = ".btn")
     private WebElement registerBtn;
 
-    public RegisterPage registerAUser(User user) {
+    public MainMenuPage registerAUser(User user) {
         fillLogin(user.getLogin());
         fillPassword(user.getPassword());
         fillRepeatedPassword(user.getPassword());
@@ -40,7 +41,7 @@ public class RegisterPage extends BasePage {
         fillFirstName(user.getFirstName());
         fillLastName(user.getLastName());
         registerClick();
-        return this;
+        return new MainMenuPage(driver);
     }
 
     public RegisterPage fillLogin(String login) {

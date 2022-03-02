@@ -28,11 +28,12 @@ public class BasePage extends UserFactory {
     }
 
     public void click(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
 
     public void sendKeys(WebElement element, String text) {
-        wait.until((ExpectedConditions.visibilityOf(element)));
+        wait.until((ExpectedConditions.elementToBeClickable(element)));
         element.sendKeys(text);
     }
 
