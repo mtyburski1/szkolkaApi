@@ -1,5 +1,6 @@
 package pages.events;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +29,9 @@ public class EventsPage extends BasePage {
     @FindBy(css = ".event-ticket-title")
     private List<WebElement> ticketNameText;
 
+    @FindBy(xpath = "/html/body/div[4]/div/table/tbody/tr[10]/td/div/div[2]/div[3]/a")
+    private WebElement eventWaitElement;
+
     public String getTicketNameText(int which){
         return ticketNameText.get(which).getText();
     }
@@ -44,8 +48,8 @@ public class EventsPage extends BasePage {
         return eventTileText.getText();
     }
 
-    public EventsPage pickEventClick(int value) throws InterruptedException {
-        Thread.sleep(1000);
+    public EventsPage pickEventClick(int value) {
+        wait.until(ExpectedConditions.elementToBeClickable(eventWaitElement));
         click(pickEventBtn.get(value));
         return this;
     }

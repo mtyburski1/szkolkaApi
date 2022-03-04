@@ -6,13 +6,11 @@ import providers.UserFactory;
 
 public class CartTest extends Pages {
     @Test
-    public void shouldCheckCart() throws InterruptedException {
+    public void shouldCheckCart() {
         User user = UserFactory.getRandomUser();
 
         mainMenuPage.goToRegisterClick();
-        registerPage.registerAUser(user)
-                .goToLoginClick();
-        Thread.sleep(300); //staleexception 
+        registerPage.registerAUser(user);
         loginPage.fillLoginAndClick(user.getLogin(), user.getPassword());
         mainMenuPage.goToEventsClick()
                 .pickEventClick(3);

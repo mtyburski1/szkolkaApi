@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.base.BasePage;
+import pages.main.MainMenuPage;
 
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver){
@@ -22,6 +23,8 @@ public class LoginPage extends BasePage {
     private WebElement loginBtn;
 
     public LoginPage fillLoginAndClick(String login, String password) {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        mainMenuPage.goToLoginClick();
         loginInput.sendKeys(login);
         loginInput.sendKeys(password);
         click(loginBtn);

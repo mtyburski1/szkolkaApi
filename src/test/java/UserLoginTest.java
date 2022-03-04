@@ -6,7 +6,7 @@ import providers.UserFactory;
 public class UserLoginTest extends Pages {
 
     @Test
-    public void ShouldLoginCorrectly(){
+    public void ShouldLoginCorrectly() {
         User user = UserFactory.getAlreadyRegisteredUser();
         mainMenuPage.goToLoginClick();
 

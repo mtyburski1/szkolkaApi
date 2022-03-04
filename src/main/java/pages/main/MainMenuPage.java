@@ -27,27 +27,27 @@ public class MainMenuPage extends BasePage {
     @FindBy(xpath = "/html/body/div[1]/ul/li[3]")
     private WebElement loginBtn;
 
-    public MainMenuPage goToMainPageClick(){
+    public MainMenuPage goToMainPageClick() {
         click(mainPageBtn);
         return this;
     }
 
-    public EventsPage goToEventsClick(){
+    public EventsPage goToEventsClick() {
         click(eventsBtn);
         return new EventsPage(driver);
     }
 
-    public MainMenuPage goToCartClick(){
+    public MainMenuPage goToCartClick() {
         cartBtn.click();
         return this;
     }
 
-    public RegisterPage goToRegisterClick(){
+    public RegisterPage goToRegisterClick() {
         click(registerBtn);
         return new RegisterPage(driver);
     }
 
-    public MainMenuPage goToLoginClick(){
+    public MainMenuPage goToLoginClick() {
         click(loginBtn);
         return this;
     }
