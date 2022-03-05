@@ -8,9 +8,10 @@ import pages.base.BasePage;
 import java.util.List;
 
 public class CartPage extends BasePage {
-    public CartPage(WebDriver driver){
+    public CartPage(WebDriver driver) {
         super(driver);
     }
+
     @FindBy(xpath = "/html/body/div[4]/div/div[3]/a")
     private WebElement cartBuyBtn;
 
@@ -20,11 +21,11 @@ public class CartPage extends BasePage {
     @FindBy(css = ".col-md-3.col-xs-5 span")
     private List<WebElement> ticketNameInCart;
 
-    public String getTicketNameInCart(int which){
+    public String getTicketNameInCart(int which) {
         return ticketNameInCart.get(which).getText();
     }
 
-    public CartPage getQuanitty(){
+    public CartPage getQuanitty() {
         for (WebElement webElement : quantity) {
             System.out.println(webElement.getAttribute("value"));
         }

@@ -1,6 +1,5 @@
 package pages.events;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +31,7 @@ public class EventsPage extends BasePage {
     @FindBy(xpath = "/html/body/div[4]/div/table/tbody/tr[10]/td/div/div[2]/div[3]/a")
     private WebElement eventWaitElement;
 
-    public String getTicketNameText(int which){
+    public String getTicketNameText(int which) {
         return ticketNameText.get(which).getText();
     }
 
