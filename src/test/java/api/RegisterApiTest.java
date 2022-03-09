@@ -1,5 +1,6 @@
 package api;
 
+import base.TestBaseApi;
 import io.restassured.http.ContentType;
 import models.User;
 import org.json.simple.JSONObject;
@@ -9,10 +10,9 @@ import providers.UserFactory;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class RegisterApiTest {
+public class RegisterApiTest extends TestBaseApi {
     @Test
     public void shouldRegisterByApi() {
-        baseURI = "http://madryt.app.javagirl.pl:22322/api";
 
         User user = UserFactory.getRandomUser();
 
@@ -29,15 +29,13 @@ public class RegisterApiTest {
                 .contentType(ContentType.JSON)
                 .body(request.toJSONString())
                 .when()
-                .post("/user/register")
+                .post("api/user/register")
                 .then()
-                .statusCode(200)
-                .log().all();
+                .statusCode(200);
     }
 
     @Test
     public void shouldRegistrerWithThreeFields() {
-        baseURI = "http://madryt.app.javagirl.pl:22322/api";
 
         User user = UserFactory.getRandomUser();
 
@@ -51,11 +49,9 @@ public class RegisterApiTest {
                 .contentType(ContentType.JSON)
                 .body(request.toJSONString())
                 .when()
-                .post("/user/register")
+                .post("api/user/register")
                 .then()
-                .statusCode(200)
-                .log().all();
-
+                .statusCode(200);
     }
 }
 
