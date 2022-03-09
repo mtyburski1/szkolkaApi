@@ -1,3 +1,5 @@
+package ui;
+
 import base.Pages;
 import models.User;
 import org.testng.Assert;
