@@ -1,5 +1,6 @@
 package api;
 
+import io.restassured.http.ContentType;
 import models.User;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
@@ -25,12 +26,13 @@ public class RegisterApiTest {
         request.put("username", user.getLogin());
 
         given()
-                .contentType("application/json\r\n")
+                .contentType(ContentType.JSON)
                 .body(request.toJSONString())
                 .when()
                 .post("/user/register")
                 .then()
-                .statusCode(200);
+                .statusCode(200)
+                .log().all();
     }
 
     @Test
@@ -46,12 +48,13 @@ public class RegisterApiTest {
         request.put("username", user.getLogin());
 
         given()
-                .contentType("application/json\r\n")
+                .contentType(ContentType.JSON)
                 .body(request.toJSONString())
                 .when()
                 .post("/user/register")
                 .then()
-                .statusCode(200);
+                .statusCode(200)
+                .log().all();
 
     }
 }
