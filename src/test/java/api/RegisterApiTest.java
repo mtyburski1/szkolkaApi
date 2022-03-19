@@ -3,6 +3,7 @@ package api;
 import base.TestBaseApi;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 
 public class RegisterApiTest extends TestBaseApi {
