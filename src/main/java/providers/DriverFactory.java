@@ -15,7 +15,6 @@ public class DriverFactory {
 
             case CHROME:
                 driver = new ChromeDriverManager().createDriver();
-
                 break;
             case FIREFOX:
                 driver = new FirefoxDriverManager().createDriver();

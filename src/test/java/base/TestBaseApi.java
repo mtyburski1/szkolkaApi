@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import providers.UserFactory;
 
 import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.port;
 
 public class TestBaseApi {
     protected User user;
@@ -20,7 +21,7 @@ public class TestBaseApi {
         user = UserFactory.getRandomUser();
 
         baseURI = "http://madryt.app.javagirl.pl";
-        RestAssured.port = 22322;
+        port = 22322;
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
     }
 }

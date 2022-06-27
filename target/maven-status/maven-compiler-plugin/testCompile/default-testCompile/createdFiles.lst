@@ -1,5 +1,7 @@
 base\TestBase.class
-CartTest.class
-UserLoginTest.class
 base\Pages.class
-UserRegistrationTest.class
+ui\CartTest.class
+ui\UserLoginTest.class
+api\RegisterApiTest.class
+base\TestBaseApi.class
+ui\UserRegistrationTest.class
